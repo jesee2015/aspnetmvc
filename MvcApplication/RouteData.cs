@@ -14,7 +14,7 @@ namespace MvcApplication
         public IDictionary<string, object> DataTokens { get; private set; }
 
         public IRouteHandler RouteHandler { get; set; }
-        public RouteBase Route { get; set; }
+        public Route Route { get; set; }
         //MvcHandler
         public RouteData()
         {

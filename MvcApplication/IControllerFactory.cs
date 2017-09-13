@@ -6,7 +6,9 @@ using System.Web.Routing;
 
 namespace MvcApplication
 {
-    public class ControllerBase
+    public interface IControllerFactory
     {
+        IController CreateController(RequestContext requestContext, string controllerName);
+
     }
 }

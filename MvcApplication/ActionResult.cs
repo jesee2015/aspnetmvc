@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MvcApplication
 {
-    class ActionResult
+    public class ActionResult
     {
     }
 }
