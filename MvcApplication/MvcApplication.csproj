@@ -62,12 +62,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionResult.cs" />
+    <Compile Include="ControllerActionInvoker.cs" />
     <Compile Include="ControllerBase.cs" />
     <Compile Include="ControllerBuilder.cs" />
+    <Compile Include="ControllerContext.cs" />
+    <Compile Include="DefaultControllerFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HomeController.cs" />
+    <Compile Include="IActionInvoker.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="IControllerFactory.cs" />
     <Compile Include="MvcHandler.cs" />
