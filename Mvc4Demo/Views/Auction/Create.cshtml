@@ -1,5 +1,32 @@
-﻿@{
+﻿@model Mvc4Demo.Models.Auction
+
+@{
     ViewBag.Title = "Create";
 }
 
 <h2>Create</h2>
+
+@using (Html.BeginForm("create", "auction", FormMethod.Post))
+{
+
+    <p>
+        @Html.LabelFor(m => m.Title)
+        @Html.EditorFor(m => m.Title)
+    </p>
+
+    <p>
+        @Html.LabelFor(m => m.Description)
+        @Html.EditorFor(m => m.Description)
+    </p>
+
+    <p>
+        @Html.LabelFor(m => m.StartPrice)
+        @Html.EditorFor(m => m.StartPrice)
+    </p>
+
+    <p>
+        @Html.LabelFor(m => m.CurrentPrice)
+        @Html.EditorFor(m => m.CurrentPrice)
+    </p>
+    <input type="submit" value="Create" />
+}
