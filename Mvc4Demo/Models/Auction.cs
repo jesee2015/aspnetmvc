@@ -10,11 +10,11 @@ namespace Mvc4Demo.Models
     {
         public Guid Id { get; set; }
 
-        [Required, Display(Name = "标题")]
+        [Required(ErrorMessage="必填"),StringLength(50,MinimumLength=10), Display(Name = "标题")]
         public string Title { get; set; }
 
 
-        [Required,Display(Name="描述"), StringLength(50, ErrorMessage = "cannot be longer than 50")]
+        [Required,Display(Name="描述"), StringLength(20, ErrorMessage = "不能超过20个字符")]
         public string Description { get; set; }
 
 
@@ -23,5 +23,6 @@ namespace Mvc4Demo.Models
 
         public decimal CurrentPrice { get; set; }
         public DateTime EndTime { get; set; }
+        
     }
 }

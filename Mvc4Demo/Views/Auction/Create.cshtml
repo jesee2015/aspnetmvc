@@ -8,15 +8,22 @@
 
 @using (Html.BeginForm("create", "auction", FormMethod.Post))
 {
-
+    //汇总所有错误信息
+    <p>@Html.ValidationSummary()</p>
+    
+    
     <p>
         @Html.LabelFor(m => m.Title)
         @Html.EditorFor(m => m.Title)
+        @*显示错误信息*@
+        @Html.ValidationMessageFor(m=>m.Title)
     </p>
 
     <p>
         @Html.LabelFor(m => m.Description)
         @Html.EditorFor(m => m.Description)
+        @*自定义错误信息*@
+        @Html.ValidationMessageFor(m=>m.Description,"*")
     </p>
 
     <p>

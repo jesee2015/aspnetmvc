@@ -14,6 +14,11 @@ namespace Mvc4Demo.Controllers
         // GET: /Auction/
 
         DataContext dbContext;
+
+        public ActionResult Index()
+        {
+            return View();
+        }
         public AuctionController()
         {
             if (dbContext == null)
@@ -27,14 +32,16 @@ namespace Mvc4Demo.Controllers
         }
 
         [HttpPost]
-        public JsonResult Create(Auction auction)
+        public ActionResult Create(Auction auction)
         {
-            auction.Id = Guid.NewGuid();
-            auction.EndTime = DateTime.Now;
-
-            dbContext.Auctions.Add(auction);
-            var res = dbContext.SaveChanges();
-            return Json(res > 0 ? true : false);
+            if (ModelState.IsValid)
+            {
+                auction.Id = Guid.NewGuid();
+                auction.EndTime = DateTime.Now;
+                dbContext.Auctions.Add(auction);
+                return RedirectToAction("Index");
+            }
+            return View(auction);
         }
 
     }
