@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<input type="button" value="SendAuction" id="btnAuction" />
+<h2>Index</h2>
+<script type="text/javascript">
+    $(function () {
+        $("#btnAuction").click(function () {
+            var auctions = new Array(2);
+
+            var auction1 = {};
+            auction1.Title = "Booob";
+            auction1.Description = "des1";
+            auction1.StartSpan = new Date();
+            auction1.CurrentPrice = 38;
+            auction1.bids = [{ "timespan": "01/12/2016 12:00 AM", "Amount": 4 }, { "timespan": "01/03/2017 10:00 AM", "Amount": 8 }];
+            auctions[0] = auction1;
+
+            var auction2 = {};
+            auction2.Title = "Booob222";
+            auction2.Description = "des1222";
+            auction2.StartSpan = new Date();
+            auction2.CurrentPrice = 382;
+            auction2.bids = [{ "timespan": "01/12/2016 12:00 AM", "Amount": 42 }, { "timespan": "01/03/2017 10:00 AM", "Amount": 82 }];
+            auctions[1] = auction2;
+
+
+            $.post("/home/sendauction", { "auctions": JSON.stringify(auctions) }, function (res) {
+                alert(res);
+            })
+        });
+
+
+    });
+</script>
