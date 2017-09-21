@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mvc4Demo.Extend;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,6 +23,8 @@ namespace Mvc4Demo
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            ModelBinders.Binders.DefaultBinder = new JsonModelBinder();
         }
     }
 }

@@ -1,19 +1,40 @@
-﻿@{
+﻿@model List<Mvc4Demo.Models.Auction>
+
+@{
     ViewBag.Title = "Index";
 }
 <script type="text/javascript">
     $(function () {
         $("#mainDv> h2").after("<p>is a pre<p>");
+        $("#auctionView").load("/auction/auctionview");
+
+        $("#btnPost").click(function myfunction() {
+            var auctions = new Array(2);
+            for (var i = 0; i < auctions.length; i++) {
+                var a = new Object();
+                a.Title = "Title" + i.toString();
+                a.Description = "Des" + i.toString();
+                a.CurrentPrice = i;
+                auctions[i] = a;
+            }
+            @*var auctions = JSON.stringify(@Model);*@
+
+            $.post("/Auction/GetAuctions", { "auctions": JSON.stringify(auctions) }, function (res) {
+                alert(res);
+            })
+        });
     })
-</script>
-<script type="text/javascript">
-    $(function () {
-        $("#");
-    });
+
 </script>
 
 <div id="mainDv">
     <h2>Auction Index</h2>
-    
+
     <a href="/Auction/Create"><h2>Create→</h2></a>
+
+    <div id="auctionView">
+        @*@Html.Partial("AuctionView", Model)*@
+    </div>
+
+    <input type="button" value="send auctions" id="btnPost" />
 </div>
