@@ -40,6 +40,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -132,12 +136,16 @@
     <Compile Include="Extend\JsonModelBinderAttribute.cs" />
     <Compile Include="Extend\JsonpResult.cs" />
     <Compile Include="Extend\MultipleResponseFormatsAttribute.cs" />
+    <Compile Include="Extend\NinjectControllerFactory.cs" />
     <Compile Include="Extend\SingleSignOnAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Auction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AuctionRepository.cs" />
+    <Compile Include="Repository\EntityRepository.cs" />
+    <Compile Include="Repository\IAuctionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />

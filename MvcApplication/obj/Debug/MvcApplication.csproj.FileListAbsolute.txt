@@ -3,3 +3,8 @@ D:\workspace\Project\WebMVCApplication\MvcApplication\bin\MvcApplication.dll
 D:\workspace\Project\WebMVCApplication\MvcApplication\bin\MvcApplication.pdb
 D:\workspace\Project\WebMVCApplication\MvcApplication\obj\Debug\MvcApplication.dll
 D:\workspace\Project\WebMVCApplication\MvcApplication\obj\Debug\MvcApplication.pdb
+D:\workspace\Project\WebMVCApplication\MvcApplication\bin\EntityFramework.dll
+D:\workspace\Project\WebMVCApplication\MvcApplication\bin\EntityFramework.SqlServer.dll
+D:\workspace\Project\WebMVCApplication\MvcApplication\bin\EntityFramework.xml
+D:\workspace\Project\WebMVCApplication\MvcApplication\bin\EntityFramework.SqlServer.xml
+D:\workspace\Project\WebMVCApplication\MvcApplication\obj\Debug\MvcApplication.csprojResolveAssemblyReference.cache

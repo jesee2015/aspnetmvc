@@ -41,3 +41,5 @@ D:\workspace\Project\WebMVCApplication\MvcModelBinderDemo\bin\zh-Hans\System.Web
 D:\workspace\Project\WebMVCApplication\MvcModelBinderDemo\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 D:\workspace\Project\WebMVCApplication\MvcModelBinderDemo\obj\Debug\MvcModelBinderDemo.dll
 D:\workspace\Project\WebMVCApplication\MvcModelBinderDemo\obj\Debug\MvcModelBinderDemo.pdb
+D:\workspace\Project\WebMVCApplication\MvcModelBinderDemo\bin\Ninject.dll
+D:\workspace\Project\WebMVCApplication\MvcModelBinderDemo\bin\Ninject.xml

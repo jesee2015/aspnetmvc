@@ -25,6 +25,7 @@ namespace Mvc4Demo
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             ModelBinders.Binders.DefaultBinder = new JsonModelBinder();
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
         }
     }
 }

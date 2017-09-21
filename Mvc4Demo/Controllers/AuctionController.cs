@@ -1,6 +1,7 @@
 ﻿using Mvc4Demo.DataModel;
 using Mvc4Demo.Extend;
 using Mvc4Demo.Models;
+using Mvc4Demo.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,12 @@ namespace Mvc4Demo.Controllers
         // GET: /Auction/
 
         DataContext dbContext;
+
+        private IAuctionRepository _auctionRepository;
+        public AuctionController(IAuctionRepository auctionRepository)
+        {
+            _auctionRepository = auctionRepository;
+        }
 
         public ActionResult Index()
         {
