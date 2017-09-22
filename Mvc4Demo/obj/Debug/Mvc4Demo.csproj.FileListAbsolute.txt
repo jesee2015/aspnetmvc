@@ -42,3 +42,4 @@ D:\workspace\Project\WebMVCApplication\Mvc4Demo\obj\Debug\Mvc4Demo.dll
 D:\workspace\Project\WebMVCApplication\Mvc4Demo\obj\Debug\Mvc4Demo.pdb
 D:\workspace\Project\WebMVCApplication\Mvc4Demo\bin\Ninject.dll
 D:\workspace\Project\WebMVCApplication\Mvc4Demo\bin\Ninject.xml
+D:\workspace\Project\WebMVCApplication\Mvc4Demo\obj\Debug\Mvc4Demo.csprojResolveAssemblyReference.cache

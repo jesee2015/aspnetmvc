@@ -1,5 +1,4 @@
-﻿using Mvc4Demo.DataModel;
-using Mvc4Demo.Extend;
+﻿using Mvc4Demo.Extend;
 using Mvc4Demo.Models;
 using Mvc4Demo.Repository;
 using System;
@@ -14,24 +13,20 @@ namespace Mvc4Demo.Controllers
     {
         //
         // GET: /Auction/
-
-        DataContext dbContext;
-
-        private IAuctionRepository _auctionRepository;
+        private IAuctionRepository AuctionRepository;
         public AuctionController(IAuctionRepository auctionRepository)
         {
-            _auctionRepository = auctionRepository;
+            AuctionRepository = auctionRepository;
         }
-
         public ActionResult Index()
         {
-            List<Auction> auctions = dbContext.Auctions.Where(c => true).ToList();
+            List<Auction> auctions = AuctionRepository.GetAuction().ToList();
             return View(auctions);
         }
 
         public ActionResult GetJsonpAuctions()
         {
-            List<Auction> auctions = dbContext.Auctions.Where(c => true).ToList();
+            List<Auction> auctions = AuctionRepository.GetAuction().ToList();
             return new JsonpResult { Data = auctions };
         }
 
@@ -43,14 +38,8 @@ namespace Mvc4Demo.Controllers
 
         public PartialViewResult AuctionView()
         {
-            List<Auction> auctions = dbContext.Auctions.Where(c => true).ToList();
+            List<Auction> auctions = AuctionRepository.GetAuction().ToList();
             return PartialView(auctions);
-        }
-
-        public AuctionController()
-        {
-            if (dbContext == null)
-                dbContext = new DataContext();
         }
 
         [HttpGet]
@@ -65,9 +54,8 @@ namespace Mvc4Demo.Controllers
             if (ModelState.IsValid)
             {
                 auction.Id = Guid.NewGuid();
-                auction.EndTime = DateTime.Now;
-                dbContext.Auctions.Add(auction);
-                dbContext.SaveChanges();
+                AuctionRepository.Add(auction);
+                AuctionRepository.Save();
                 return RedirectToAction("Index");
             }
             return View(auction);
